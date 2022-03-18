@@ -47,6 +47,7 @@ MonoBehaviour:
   Number: 10
   Suit: 3
   Color: 1
+  Selected: 0
 --- !u!1001 &5122870945769557439
 PrefabInstance:
   m_ObjectHideFlags: 0
