@@ -6,7 +6,7 @@ public class MemoryGame : MonoBehaviour
 {
     #region Private Properties
     private List<PlayingCard> _cardsInGame;
-    private static List<PlayingCard> _selectedCards;
+    private List<PlayingCard> _selectedCards;
     #endregion
 
     #region Public Properties
@@ -17,8 +17,34 @@ public class MemoryGame : MonoBehaviour
     #region Private Methods
     private void Start()
     {
+        _selectedCards = new List<PlayingCard>();
+
         this.GeneratePairs(PairAmount);
         this.SpawnCards();
+    }
+
+    private void FixedUpdate()
+    {
+        if(_cardsInGame.Count > 0)
+        {
+            if (Random.Range(0, 100) > 60)
+            {
+                int index = Random.Range(0, _cardsInGame.Count);
+                if (_cardsInGame[index].Selected == false)
+                {
+                    _cardsInGame[index].Selected = true;
+                }
+            }
+
+            for (int i = 0; i < _cardsInGame.Count; i++)
+            {
+                if (_cardsInGame[i].Selected && !_selectedCards.Contains(_cardsInGame[i]))
+                {
+                    Debug.Log("Card selected");
+                    this.SelectCard(_cardsInGame[i]);
+                }
+            }
+        }
     }
 
     private void GeneratePairs(int amount)
@@ -51,39 +77,51 @@ public class MemoryGame : MonoBehaviour
 
     private void SpawnCards()
     {
-        foreach (PlayingCard playingCard in _cardsInGame)
+        for (int i = 0; i < _cardsInGame.Count; i++)
         {
-            PlayingCard clone = Instantiate(playingCard, transform.position, transform.rotation);
+            PlayingCard clone = Instantiate(_cardsInGame[i], transform.position, transform.rotation);
+
+            _cardsInGame[i] = clone;
         }
     }
 
-    private static void CheckPair()
+    private void CheckPair()
     {
-        if (_selectedCards[0].Color == _selectedCards[1].Color)
+        Debug.Log("Checking pair");
+        if (_selectedCards[0].Color == _selectedCards[1].Color && _selectedCards[0].Number == _selectedCards[1].Number && _selectedCards[0] != null)
         {
-            //DeleteCards();
-        }
-        else
-        {
-
+            Debug.Log("Pair found!");
+            this.DeleteCards();
         }
     }
 
     private void DeleteCards()
     {
-        //Destroy(_cards[_cards.IndexOf(_selectedCards[0])].gameObject);
-        //Destroy(_cards[_cards.IndexOf(_selectedCards[1])].gameObject);
+        Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[0])].gameObject);
+        _cardsInGame.Remove(_selectedCards[0]);
+        Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[1])].gameObject);
+        _cardsInGame.Remove(_selectedCards[1]);
+    }
+
+    private void UnSelectCards()
+    {
+        foreach (PlayingCard playingCard in _selectedCards)
+        {
+            playingCard.Selected = false;
+        }
     }
     #endregion
 
     #region Public Methods
-    public static void SelectCard(PlayingCard playingCard)
+    public void SelectCard(PlayingCard playingCard)
     {
         _selectedCards.Add(playingCard);
         
         if(_selectedCards.Count >= 2)
         {
-            CheckPair();
+            this.CheckPair();
+            this.UnSelectCards();
+            _selectedCards.Clear();
         }
     }
     #endregion

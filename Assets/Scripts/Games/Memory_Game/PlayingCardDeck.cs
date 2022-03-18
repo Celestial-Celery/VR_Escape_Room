@@ -11,14 +11,10 @@ public class PlayingCardDeck : MonoBehaviour
     public List<PlayingCard> Spades;
     #endregion
 
-    #region Private Methods
-
-    #endregion
-
     #region Public Methods
     public PlayingCard GetPlayingCard(int number, PlayingCardSuit suit)
     {
-        PlayingCard playingCard = new PlayingCard();
+        PlayingCard playingCard = null;
 
         switch (suit)
         {
