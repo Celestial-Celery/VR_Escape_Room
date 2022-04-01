@@ -31,8 +31,8 @@ public class PlayingCard : MonoBehaviour
     #region Private methods
     private void Start()
     {
-        this._faceDown = this.transform.localRotation;
-        this._faceUp = new Quaternion(0, 0, 1f, 0);
+        this._faceDown = this.transform.localRotation * Quaternion.Euler(0,180,0);
+        this._faceUp = new Quaternion(0, 0, 1f, 0) * Quaternion.Euler(0, 180, 0);
         this._rotationSpeed = 180f;
         this._isFlipping = false;
 
@@ -53,20 +53,13 @@ public class PlayingCard : MonoBehaviour
         }
         
         this.transform.localRotation = Quaternion.RotateTowards(this.transform.localRotation, this._destination, Time.deltaTime * this._rotationSpeed);
-
-
-        //if (this._isFlipping)
-        //{
-            
-        //    if (this.transform.rotation == this._faceDown)
-        //    {
-        //        Debug.Log("Stopped flipping");
-        //        this._isFlipping = false;
-        //    }
-        //}
     }
     #endregion
 
     #region Public methods
+    public void Select()
+    {
+        this.Selected = true;
+    }
     #endregion
 }

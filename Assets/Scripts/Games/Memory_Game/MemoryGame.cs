@@ -4,29 +4,36 @@ using UnityEngine;
 
 public class MemoryGame : MonoBehaviour
 {
-    #region Private Properties
+    #region Private properties
     private List<PlayingCard> _cardsInGame;
     private List<PlayingCard> _selectedCards;
     private Vector3 _nextPosition;
+
+    private bool _gameStarted;
+
+    private bool _cardsSelected;
+    private bool _pairChecked;
+    private bool _pairFound;
+    private bool _cardsRemoved;
+
+    private float _boardLength;
+    private float _boardHeight;
     #endregion
 
-    #region Public Properties
+    #region Public properties
     public PlayingCardDeck Deck;
-    public int PairAmount;
+    public int Pairs;
     #endregion
 
-    #region Private Methods
+    #region Private methods
     private void Start()
     {
-        _selectedCards = new List<PlayingCard>();
+        this._boardLength = 0.7f;
+        this._boardHeight = 0.24f;
+        this._selectedCards = new List<PlayingCard>();
 
-        this.GeneratePairs(PairAmount);
+        this.GeneratePairs(Pairs);
         this.SpawnCards();
-    }
-
-    private void FixedUpdate()
-    {
-        this.SelectRandomCard();
     }
 
     private void GeneratePairs(int amount)
@@ -40,7 +47,7 @@ public class MemoryGame : MonoBehaviour
 
             if (randomColor == PlayingCardColor.Red)
             {
-                if(!_cardsInGame.Contains(Deck.GetPlayingCard(randomNumber, PlayingCardSuit.Diamonds)))
+                if (!_cardsInGame.Contains(Deck.GetPlayingCard(randomNumber, PlayingCardSuit.Diamonds)))
                 {
                     _cardsInGame.Add(Deck.GetPlayingCard(randomNumber, PlayingCardSuit.Diamonds));
                     _cardsInGame.Add(Deck.GetPlayingCard(randomNumber, PlayingCardSuit.Hearts));
@@ -59,16 +66,70 @@ public class MemoryGame : MonoBehaviour
 
     private void SpawnCards()
     {
-        this._nextPosition = new Vector3(this.gameObject.transform.localPosition.x, this.gameObject.transform.localPosition.y + 0.5f, this.gameObject.transform.localPosition.z);
+        int rowCount = Mathf.FloorToInt((Pairs * 2) / 4);
+        int rowLength = (Pairs * 2) / rowCount;
+        int nextIndex = 0;
 
-        for (int i = 0; i < _cardsInGame.Count; i++)
+        this._nextPosition.z = this.gameObject.transform.localPosition.z + (this._boardHeight / 2);
+        this._nextPosition.x = this.gameObject.transform.localPosition.x - (this._boardLength / 2);
+        this._nextPosition.y = this.gameObject.transform.localPosition.y + 0.55f;
+
+        for (int rowNr = 0; rowNr < rowCount; rowNr++)
         {
-            PlayingCard clone = Instantiate(_cardsInGame[i], this._nextPosition, transform.rotation);
-            clone.transform.parent = this.gameObject.transform;
+            for (int rowIndex = 0; rowIndex < rowLength; rowIndex++)
+            {
+                PlayingCard clone = Instantiate(_cardsInGame[nextIndex], this._nextPosition, transform.rotation);
+                clone.transform.parent = this.gameObject.transform;
 
-            _cardsInGame[i] = clone;
+                _cardsInGame[nextIndex] = clone;
 
-            this._nextPosition = new Vector3(this._nextPosition.x + 0.25f, this._nextPosition.y, this._nextPosition.z);
+                this._nextPosition.x = this._nextPosition.x + (this._boardLength / (rowLength - 1));
+
+                nextIndex += 1;
+            }
+
+            this._nextPosition.x = this.gameObject.transform.localPosition.x - (this._boardLength / 2);
+            this._nextPosition.z = this._nextPosition.z - (this._boardHeight / (rowCount - 1));
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!_gameStarted)
+        {
+            _gameStarted = true;
+            StartCoroutine(GameLogic());
+        }
+    }
+
+    IEnumerator GameLogic()
+    {
+        while (_gameStarted)
+        {
+            yield return new WaitForSeconds(1);
+
+            while (!_cardsSelected)
+            {
+                this.SelectRandomCard();
+                this.CheckCards();
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1);
+
+            while (!_pairChecked)
+            {
+                this.CheckPair();
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1);
+
+            while (!_cardsRemoved)
+            {
+                this.RemoveCards();
+                yield return null;
+            }
         }
     }
 
@@ -76,23 +137,18 @@ public class MemoryGame : MonoBehaviour
     {
         if (_cardsInGame.Count > 0)
         {
-            if (Random.Range(0, 1000) > 995)
-            {
-                int index = Random.Range(0, _cardsInGame.Count);
-                if (_cardsInGame[index].Selected == false)
-                {
-                    _cardsInGame[index].Selected = true;
-                    this.SelectCard(_cardsInGame[index]);
-                }
-            }
+            int index = Random.Range(0, _cardsInGame.Count);
+            _cardsInGame[index].Select();
+        }
+    }
 
-            for (int i = 0; i < _cardsInGame.Count; i++)
+    private void CheckCards()
+    {
+        foreach (PlayingCard playingCard in this._cardsInGame)
+        {
+            if (playingCard.Selected == true)
             {
-                if (_cardsInGame[i].Selected && !_selectedCards.Contains(_cardsInGame[i]))
-                {
-                    Debug.Log("Card selected");
-                    this.SelectCard(_cardsInGame[i]);
-                }
+                this.SelectCard(playingCard);
             }
         }
     }
@@ -103,37 +159,64 @@ public class MemoryGame : MonoBehaviour
         if (_selectedCards[0].Color == _selectedCards[1].Color && _selectedCards[0].Number == _selectedCards[1].Number && _selectedCards[0] != null)
         {
             Debug.Log("Pair found!");
-            this.DeleteCards();
+            this._pairFound = true;
         }
-    }
+        else
+        {
+            Debug.Log("Pair not found!");
+            this._pairFound = false;
+        }
 
-    private void DeleteCards()
-    {
-        Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[0])].gameObject);
-        _cardsInGame.Remove(_selectedCards[0]);
-        Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[1])].gameObject);
-        _cardsInGame.Remove(_selectedCards[1]);
+        this._pairChecked = true;
+        this._cardsRemoved = false;
     }
 
     private void UnSelectCards()
     {
-        foreach (PlayingCard playingCard in _selectedCards)
+        foreach (PlayingCard playingCard in this._cardsInGame)
         {
             playingCard.Selected = false;
         }
+        this._selectedCards = new List<PlayingCard>();
+    }
+
+    private void RemoveCards()
+    {
+        if (_pairFound)
+        {
+            Debug.Log("Removing pair...");
+
+            Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[0])].gameObject);
+            _cardsInGame.Remove(_selectedCards[0]);
+            Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[1])].gameObject);
+            _cardsInGame.Remove(_selectedCards[1]);
+        }
+
+        this.UnSelectCards();
+
+        this._cardsRemoved = true;
+        this._cardsSelected = false;
     }
     #endregion
 
-    #region Public Methods
+    #region Public methods
     public void SelectCard(PlayingCard playingCard)
     {
-        _selectedCards.Add(playingCard);
-        
-        if(_selectedCards.Count >= 2)
+        if (!_selectedCards.Contains(playingCard))
         {
-            this.CheckPair();
-            this.UnSelectCards();
-            _selectedCards.Clear();
+            Debug.Log($"Selected card: {playingCard.Suit} {playingCard.Number}, total cards selected: {_selectedCards.Count + 1}");
+            this._selectedCards.Add(playingCard);
+
+            if (_selectedCards.Count == 2)
+            {
+                Debug.Log("got 2 cards");
+                this._cardsSelected = true;
+                this._pairChecked = false;
+            }
+            else
+            {
+                this._cardsSelected = false;
+            }
         }
     }
     #endregion
