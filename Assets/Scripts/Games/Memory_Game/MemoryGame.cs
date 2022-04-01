@@ -110,7 +110,7 @@ public class MemoryGame : MonoBehaviour
 
             while (!_cardsSelected)
             {
-                this.SelectRandomCard();
+                //this.SelectRandomCard();
                 this.CheckCards();
                 yield return null;
             }
