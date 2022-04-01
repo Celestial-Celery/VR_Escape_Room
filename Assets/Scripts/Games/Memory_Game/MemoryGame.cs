@@ -190,12 +190,23 @@ public class MemoryGame : MonoBehaviour
             _cardsInGame.Remove(_selectedCards[0]);
             Destroy(_cardsInGame[_cardsInGame.IndexOf(_selectedCards[1])].gameObject);
             _cardsInGame.Remove(_selectedCards[1]);
+
+            if (this._cardsInGame.Count == 0)
+            {
+                this.GameCompleted();
+            }
         }
 
         this.UnSelectCards();
 
         this._cardsRemoved = true;
         this._cardsSelected = false;
+    }
+
+    private void GameCompleted()
+    {
+        Debug.Log("Memory game completed");
+        // Code for game completed here
     }
     #endregion
 
