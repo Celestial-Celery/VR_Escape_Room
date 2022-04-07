@@ -490,6 +490,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492909050}
     m_Modifications:
+    - target: {fileID: 3636957523464812157, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_HideControllerOnSelect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643883727158652445, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_HideControllerOnSelect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8360284369324409112, guid: d2394f40fdcd779468f1231d487fd1f8,
         type: 3}
       propertyPath: m_Name
@@ -582,17 +592,17 @@ PrefabInstance:
     - target: {fileID: 2887930472884785835, guid: 43f65733d6d7ed64abd51bdab4dc0670,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.39
+      value: -0.40316
       objectReference: {fileID: 0}
     - target: {fileID: 2887930472884785835, guid: 43f65733d6d7ed64abd51bdab4dc0670,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7436418
+      value: -0.74
       objectReference: {fileID: 0}
     - target: {fileID: 2887930472884785835, guid: 43f65733d6d7ed64abd51bdab4dc0670,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.382
+      value: 0.38621
       objectReference: {fileID: 0}
     - target: {fileID: 2887930472884785835, guid: 43f65733d6d7ed64abd51bdab4dc0670,
         type: 3}
