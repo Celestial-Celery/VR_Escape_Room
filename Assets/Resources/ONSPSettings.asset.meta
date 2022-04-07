@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 0694ae3794014b843a9bb891586fd55b
+=======
 guid: 00e0932d365971d42a4385d6b84eaaa8
+>>>>>>> Pillow-Game
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

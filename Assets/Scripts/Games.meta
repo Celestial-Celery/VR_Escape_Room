@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 686d3f6b192fc1f4aa2849f223cc30f2
+=======
 guid: fbe3e2415b819c844be1ec0758029250
+>>>>>>> Pillow-Game
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
