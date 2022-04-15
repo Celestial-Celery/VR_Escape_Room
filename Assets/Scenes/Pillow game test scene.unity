@@ -490,16 +490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492909050}
     m_Modifications:
-    - target: {fileID: 3636957523464812157, guid: d2394f40fdcd779468f1231d487fd1f8,
-        type: 3}
-      propertyPath: m_HideControllerOnSelect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3643883727158652445, guid: d2394f40fdcd779468f1231d487fd1f8,
-        type: 3}
-      propertyPath: m_HideControllerOnSelect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8360284369324409112, guid: d2394f40fdcd779468f1231d487fd1f8,
         type: 3}
       propertyPath: m_Name
