@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 107331211669127343}
   - component: {fileID: 3931845833806831591}
   - component: {fileID: 7276446763134053877}
+  - component: {fileID: 3493730665743017711}
   m_Layer: 0
   m_Name: Key_Couch
   m_TagString: Untagged
@@ -25,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3300867680957728391}
-  m_LocalRotation: {x: -0, y: -0.34604064, z: -0, w: 0.93821955}
+  m_LocalRotation: {x: 0, y: -0.34604332, z: 0, w: 0.93821853}
   m_LocalPosition: {x: -0.725, y: 0.46, z: -3.0806198}
-  m_LocalScale: {x: 0.0019363513, y: 0.0019363513, z: 0.0019363513}
+  m_LocalScale: {x: 0.0019400001, y: 0.00194, z: 0.0019400001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3493730665743017711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300867680957728391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff22f3e58762b234291f8ee29b294d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementTime: 3
