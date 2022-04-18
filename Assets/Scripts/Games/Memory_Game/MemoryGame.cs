@@ -207,6 +207,8 @@ public class MemoryGame : MonoBehaviour
     {
         Debug.Log("Memory game completed");
         // Code for game completed here
+        // Call a scene that is called GameManager
+        // UnityEngine.SceneManagement.SceneManager.LoadScene("GameManager");
     }
     #endregion
 
