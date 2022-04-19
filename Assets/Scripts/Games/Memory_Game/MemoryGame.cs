@@ -33,6 +33,7 @@ public class MemoryGame : MonoBehaviour
         this._selectedCards = new List<PlayingCard>();
 
         this.GeneratePairs(Pairs);
+        this.ShuffleCards();
         this.SpawnCards();
     }
 
@@ -90,6 +91,17 @@ public class MemoryGame : MonoBehaviour
 
             this._nextPosition.x = this.gameObject.transform.localPosition.x - (this._boardLength / 2);
             this._nextPosition.z = this._nextPosition.z - (this._boardHeight / (rowCount - 1));
+        }
+    }
+
+    private void ShuffleCards()
+    {
+        for (int i = 0; i < this._cardsInGame.Count - 1; i++)
+        {
+            int rnd = Random.Range(i, this._cardsInGame.Count);
+            PlayingCard tempCard = this._cardsInGame[rnd];
+            this._cardsInGame[rnd] = this._cardsInGame[i];
+            this._cardsInGame[i] = tempCard;
         }
     }
 
@@ -176,6 +188,11 @@ public class MemoryGame : MonoBehaviour
         foreach (PlayingCard playingCard in this._cardsInGame)
         {
             playingCard.Selected = false;
+
+            if (playingCard.IsGameSelected)
+            {
+                playingCard.Flip();
+            }
         }
         this._selectedCards = new List<PlayingCard>();
     }
@@ -215,6 +232,7 @@ public class MemoryGame : MonoBehaviour
     {
         if (!_selectedCards.Contains(playingCard))
         {
+            playingCard.Flip();
             Debug.Log($"Selected card: {playingCard.Suit} {playingCard.Number}, total cards selected: {_selectedCards.Count + 1}");
             this._selectedCards.Add(playingCard);
 

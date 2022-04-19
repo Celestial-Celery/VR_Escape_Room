@@ -19,13 +19,13 @@ public class PlayingCard : MonoBehaviour
     private Quaternion _faceDown;
     private Quaternion _destination;
     private float _rotationSpeed;
-    private bool _isFlipping;
     #endregion
     #region Public properties
     public int Number;
     public PlayingCardSuit Suit;
     public PlayingCardColor Color;
     public bool Selected;
+    public bool IsGameSelected;
     #endregion
 
     #region Private methods
@@ -34,8 +34,8 @@ public class PlayingCard : MonoBehaviour
         this._faceDown = this.transform.localRotation * Quaternion.Euler(0,180,0);
         this._faceUp = new Quaternion(0, 0, 1f, 0) * Quaternion.Euler(0, 180, 0);
         this._rotationSpeed = 180f;
-        this._isFlipping = false;
 
+        this.IsGameSelected = false;
         this.Selected = false;
 
         this.transform.rotation = _faceUp;
@@ -43,7 +43,7 @@ public class PlayingCard : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (this.Selected)
+        if (this.IsGameSelected)
         {
             this._destination = _faceDown;
         }
@@ -60,6 +60,11 @@ public class PlayingCard : MonoBehaviour
     public void Select()
     {
         this.Selected = true;
+    }
+
+    public void Flip()
+    {
+        this.IsGameSelected = !this.IsGameSelected;
     }
     #endregion
 }
