@@ -11,4 +11,9 @@ public enum GameState
 public class Game : MonoBehaviour
 {
     public GameState GameState;
+
+    private void Start()
+    {
+        this.GameState = GameState.InProgress;
+    }
 }

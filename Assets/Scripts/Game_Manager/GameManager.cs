@@ -7,7 +7,8 @@ public enum GameManagerState
     Start,
     InProgress,
     Paused,
-    Completed
+    Completed,
+    Ended
 }
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
     private int _gamesCompleted;
 
     private void Start()
+    {
+        this.ResetEscapeRoom();
+    }
+
+    private void ResetEscapeRoom()
     {
         this._escapeRoomStarted = false;
         this._escapeRoomState = GameManagerState.Start;
@@ -47,7 +53,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            while (this._escapeRoomState == GameManagerState.InProgress)
+            while(this._escapeRoomState == GameManagerState.InProgress)
             {
                 //here code for when you are playing the escape room
                 this.CheckGameStates();
@@ -55,13 +61,17 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            while (this._escapeRoomState == GameManagerState.Completed)
+            while(this._escapeRoomState == GameManagerState.Completed)
             {
                 //code to run when the escape room is completed
                 this.EndEscapeRoom();
                 yield return null;
             }
 
+            while(this._escapeRoomState == GameManagerState.Ended)
+            {
+                yield return null;
+            }
         }
     }
 
@@ -97,5 +107,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You have completed the Escape room!");
         //here code that executes when the escape room ends
+        this._escapeRoomState = GameManagerState.Ended;
     }
 }
