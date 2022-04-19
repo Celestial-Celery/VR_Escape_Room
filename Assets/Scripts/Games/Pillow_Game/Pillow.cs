@@ -8,20 +8,16 @@ public class Pillow : MonoBehaviour
     void Awake()
     {
         HasKey = false;
-    }
+    }    
 
-    //TEMPORARY TO TEST OUT GAME
-    public bool IsSelected;
-    void Update()
+    public void Release()
     {
-        if (IsSelected)
-        {
-            Select();
-        }
+        this.gameObject.GetComponent<Renderer>().material.SetFloat("_Opacity", 1f);
     }
 
     public void Select()
     {
-        Couch.Select(this);
+        this.gameObject.GetComponent<Renderer>().material.SetFloat("_Opacity", 0.7f);
+        Couch.Select(this, GameObject.Find("Key_Couch").GetComponent<Key>());
     }
 }
