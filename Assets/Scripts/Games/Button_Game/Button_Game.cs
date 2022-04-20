@@ -105,14 +105,14 @@ public class Button_Game : MonoBehaviour
             while (this._buttonGameState == ButtonGameState.ClearingNumpad)
             {
                 Debug.Log("Clearing numpad...");
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(1);
                 this.ClearNumpad(); //should change gamestate to entering code
             }
 
             while (this._buttonGameState == ButtonGameState.CheckingCode)
             {
                 this.CheckCode(); //should change gamestate to either clear numpad or completed
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(2);
             }
 
             while (this._buttonGameState == ButtonGameState.Completed)
