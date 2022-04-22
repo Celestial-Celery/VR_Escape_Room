@@ -10,7 +10,7 @@ public enum ButtonGameState
     Completed
 }
 
-public class Button_Game : MonoBehaviour
+public class Button_Game : Game
 {
     #region Private properties
     private int _nr1;
@@ -38,6 +38,8 @@ public class Button_Game : MonoBehaviour
     #region Private methods
     private void Start()
     {
+        this.GameState = GameState.InProgress;
+
         this.GenerateCode();
         this.SpawnCodeHint();
 
@@ -176,8 +178,8 @@ public class Button_Game : MonoBehaviour
     private void ButtonGameCompleted()
     {
         Debug.Log("Button game completed!");
-        //this._gameCompleted = true;
         //Send game completed to game manager
+        this.GameState = GameState.Completed;
     }
     #endregion
 

@@ -28,6 +28,8 @@ public class MemoryGame : Game
     #region Private methods
     private void Start()
     {
+        this.GameState = GameState.InProgress;
+
         this._boardLength = 0.7f;
         this._boardHeight = 0.24f;
         this._selectedCards = new List<PlayingCard>();
