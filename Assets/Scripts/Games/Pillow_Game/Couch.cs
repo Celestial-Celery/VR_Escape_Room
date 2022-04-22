@@ -5,6 +5,7 @@ public class Couch : MonoBehaviour
 {
     public List<Pillow> Pillows;
     private int _keyPos;
+    private static bool _keyfound = false;
 
     //Called on start
     void Start()
@@ -16,11 +17,12 @@ public class Couch : MonoBehaviour
     }
 
     //Called by pillow when it is selected
-    public static void Select(Pillow pillow)
+    public static void Select(Pillow pillow, Key _key)
     {
-        if (pillow.HasKey)
+        if (pillow.HasKey && !_keyfound)
         {
-            KeyFound();
+            _keyfound = true;
+            KeyFound(_key);
         }
         //Maybe something more elegant than just poof gone
         //Destroy(pillow.gameObject);
@@ -43,8 +45,9 @@ public class Couch : MonoBehaviour
     }
 
     //Key found logic would be here
-    private static void KeyFound()
+    private static void KeyFound(Key _key)
     {
+        _key.Found();
         Debug.Log("Key has been found!");
     }
 }
