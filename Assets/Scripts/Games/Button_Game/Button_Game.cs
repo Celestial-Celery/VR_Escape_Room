@@ -98,7 +98,6 @@ public class Button_Game : MonoBehaviour
             while (this._buttonGameState == ButtonGameState.EnteringCode)
             {
                 this.CheckNumpad(); //Checks which buttons have been pressed
-                //this.CheckCode(); //should change state to either clearing numpad or checking code
                 yield return null;
             }
 
@@ -112,7 +111,7 @@ public class Button_Game : MonoBehaviour
             while (this._buttonGameState == ButtonGameState.CheckingCode)
             {
                 this.CheckCode(); //should change gamestate to either clear numpad or completed
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
             }
 
             while (this._buttonGameState == ButtonGameState.Completed)
