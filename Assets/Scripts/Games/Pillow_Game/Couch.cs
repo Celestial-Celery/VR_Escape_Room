@@ -42,7 +42,8 @@ public class Couch : Game
     {
         foreach(Pillow pillow in Pillows)
         {
-            pillow.transform.SetParent(null);
+            //pillow.transform.SetParent(null);
+            pillow.transform.parent = this.gameObject.transform;
         }
     }
 

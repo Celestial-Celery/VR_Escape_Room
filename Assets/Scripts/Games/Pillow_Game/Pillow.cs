@@ -14,6 +14,7 @@ public class Pillow : MonoBehaviour
     public void Release()
     {
         this.gameObject.GetComponent<Renderer>().material.SetFloat("_Opacity", 1f);
+        this.gameObject.transform.parent = this.Couch.gameObject.transform;
     }
 
     public void Select()
