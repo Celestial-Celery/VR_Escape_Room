@@ -26,10 +26,10 @@ public class Button_Game : MonoBehaviour
     #endregion
 
     #region Public properties
-    public GameObject MirrorRoom;
     public Numpad_Button[] Buttons;
     public GameObject[] Hints;
 
+    public GameObject MirrorRoom;
     public GameObject Hint1PlaceHolder;
     public GameObject Hint2PlaceHolder;
     public GameObject Hint3PlaceHolder;
@@ -53,16 +53,16 @@ public class Button_Game : MonoBehaviour
 
     private void GenerateCode()
     {
-        this._nr1 = Random.Range(0, 3);
+        this._nr1 = Random.Range(0, 10);
 
         do
         {
-            this._nr2 = Random.Range(0, 3);
+            this._nr2 = Random.Range(0, 10);
         } while(this._nr2 == this._nr1);
 
         do
         {
-            this._nr3 = Random.Range(0, 3);
+            this._nr3 = Random.Range(0, 10);
         } while(this._nr3 == this._nr1 || this._nr3 == this._nr2);
     }
 
