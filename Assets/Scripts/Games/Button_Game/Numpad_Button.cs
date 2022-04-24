@@ -40,7 +40,7 @@ public class Numpad_Button : MonoBehaviour
     private void Start()
     {
         this._unpressedPosition = this.transform.localPosition;
-        this._pressedPosition = this.transform.localPosition + new Vector3(0,0,0.1f);
+        this._pressedPosition = this.transform.localPosition + new Vector3(0.2f,0,0);
         this._translationSpeed = 1f;
 
         this.IsGameSelected = false;
