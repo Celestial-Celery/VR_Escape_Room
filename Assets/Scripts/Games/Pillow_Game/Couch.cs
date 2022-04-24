@@ -52,6 +52,6 @@ public class Couch : Game
     {
         _key.Found();
         Debug.Log("Key has been found!");
-        couch.GameState = GameState.InProgress;
+        couch.GameState = GameState.Completed;
     }
 }

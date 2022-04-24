@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 {
     public Game[] Games;
 
+    public TextMesh ProgressText;
+
     private bool _escapeRoomStarted;
     private GameManagerState _escapeRoomState;
     private int _gamesCount;
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
         this._escapeRoomState = GameManagerState.Start;
         this._gamesCount = Games.Length;
         this._gamesCompleted = 0;
+        this.ProgressText.text = "Welcome to the escape room";
     }
 
     private void FixedUpdate()
@@ -107,6 +110,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You have completed the Escape room!");
         //here code that executes when the escape room ends
+        this.ProgressText.text = "You have finished the escape room";
         this._escapeRoomState = GameManagerState.Ended;
     }
 }

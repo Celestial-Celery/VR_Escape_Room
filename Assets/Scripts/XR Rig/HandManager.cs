@@ -55,7 +55,7 @@ public class HandManager : MonoBehaviour
         {
             if (controller.transform.GetChild(i).gameObject.activeSelf)
             {
-                Debug.Log("Controllers active");
+                //Debug.Log("Controllers active");
                 return false;                
             }
         }
