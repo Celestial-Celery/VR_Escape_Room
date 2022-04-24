@@ -393,6 +393,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Memory_Game
       objectReference: {fileID: 0}
+    - target: {fileID: 8846854600091710014, guid: 9ae55dec2ff09f14babebfcd3ab9334d,
+        type: 3}
+      propertyPath: Rotation
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8846854600091710015, guid: 9ae55dec2ff09f14babebfcd3ab9334d,
         type: 3}
       propertyPath: m_RootOrder

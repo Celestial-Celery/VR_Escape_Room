@@ -23,6 +23,7 @@ public class MemoryGame : Game
     #region Public properties
     public PlayingCardDeck Deck;
     public int Pairs;
+    public int Rotation;
     #endregion
 
     #region Private methods
@@ -37,6 +38,7 @@ public class MemoryGame : Game
         this.GeneratePairs(Pairs);
         this.ShuffleCards();
         this.SpawnCards();
+        this.FixRotation();
     }
 
     private void GeneratePairs(int amount)
@@ -227,6 +229,11 @@ public class MemoryGame : Game
         Debug.Log("Memory game completed");
         // Code for game completed here
         this.GameState = GameState.Completed;
+    }
+
+    private void FixRotation()
+    {
+        this.gameObject.transform.rotation = Quaternion.Euler(0, this.Rotation, 0);
     }
     #endregion
 
