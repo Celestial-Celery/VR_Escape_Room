@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MemoryGame : MonoBehaviour
+public class MemoryGame : Game
 {
     #region Private properties
     private List<PlayingCard> _cardsInGame;
@@ -28,6 +28,8 @@ public class MemoryGame : MonoBehaviour
     #region Private methods
     private void Start()
     {
+        this.GameState = GameState.InProgress;
+
         this._boardLength = 0.7f;
         this._boardHeight = 0.24f;
         this._selectedCards = new List<PlayingCard>();
@@ -224,6 +226,7 @@ public class MemoryGame : MonoBehaviour
     {
         Debug.Log("Memory game completed");
         // Code for game completed here
+        this.GameState = GameState.Completed;
     }
     #endregion
 
