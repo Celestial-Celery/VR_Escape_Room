@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Couch : MonoBehaviour
+public class Couch : Game
 {
     public List<Pillow> Pillows;
     private int _keyPos;
@@ -14,15 +14,17 @@ public class Couch : MonoBehaviour
         Pillows[_keyPos].HasKey = true;
         SpawnKey(Pillows[_keyPos]);
         UnparentPillows();
+
+        this.GameState = GameState.InProgress;
     }
 
     //Called by pillow when it is selected
-    public static void Select(Pillow pillow, Key _key)
+    public static void Select(Pillow pillow, Key _key, Couch couch)
     {
         if (pillow.HasKey && !_keyfound)
         {
             _keyfound = true;
-            KeyFound(_key);
+            KeyFound(_key, couch);
         }
         //Maybe something more elegant than just poof gone
         //Destroy(pillow.gameObject);
@@ -45,9 +47,10 @@ public class Couch : MonoBehaviour
     }
 
     //Key found logic would be here
-    private static void KeyFound(Key _key)
+    private static void KeyFound(Key _key, Couch couch)
     {
         _key.Found();
         Debug.Log("Key has been found!");
+        couch.GameState = GameState.InProgress;
     }
 }

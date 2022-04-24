@@ -4,6 +4,7 @@ public class Pillow : MonoBehaviour
 {
     public bool HasKey;
 
+    public Couch Couch;
 
     void Awake()
     {
@@ -18,6 +19,6 @@ public class Pillow : MonoBehaviour
     public void Select()
     {
         this.gameObject.GetComponent<Renderer>().material.SetFloat("_Opacity", 0.7f);
-        Couch.Select(this, GameObject.Find("Key_Couch").GetComponent<Key>());
+        Couch.Select(this, GameObject.Find("Key_Couch").GetComponent<Key>(), this.Couch);
     }
 }
