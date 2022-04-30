@@ -25,34 +25,40 @@ public class ToggleControllerVisibility : MonoBehaviour
 
     public void toggleLeft()
     {
-        switch (_leftstate)
+        if (!HandManager.handsActive)
         {
-            case VisibilityState.Visible:
-                _leftRay.enabled = false;
-                leftOVRControllerPrefab.SetActive(false);
-                _leftstate = VisibilityState.Hidden;
-                break;
-            case VisibilityState.Hidden:
-                _leftRay.enabled = true;
-                leftOVRControllerPrefab.SetActive(true);
-                _leftstate = VisibilityState.Visible;
-                break;
-        }
+            switch (_leftstate)
+            {
+                case VisibilityState.Visible:
+                    _leftRay.enabled = false;
+                    leftOVRControllerPrefab.SetActive(false);
+                    _leftstate = VisibilityState.Hidden;
+                    break;
+                case VisibilityState.Hidden:
+                    _leftRay.enabled = true;
+                    leftOVRControllerPrefab.SetActive(true);
+                    _leftstate = VisibilityState.Visible;
+                    break;
+            }
+        }        
     }
     public void toggleRight()
     {
-        switch (_rightstate)
+        if (!HandManager.handsActive)
         {
-            case VisibilityState.Visible:
-                _rightRay.enabled = false;
-                rightOVRControllerPrefab.SetActive(false);
-                _rightstate = VisibilityState.Hidden;
-                break;
-            case VisibilityState.Hidden:
-                _rightRay.enabled = true;
-                rightOVRControllerPrefab.SetActive(true);
-                _rightstate = VisibilityState.Visible;
-                break;
-        }
+            switch (_rightstate)
+            {
+                case VisibilityState.Visible:
+                    _rightRay.enabled = false;
+                    rightOVRControllerPrefab.SetActive(false);
+                    _rightstate = VisibilityState.Hidden;
+                    break;
+                case VisibilityState.Hidden:
+                    _rightRay.enabled = true;
+                    rightOVRControllerPrefab.SetActive(true);
+                    _rightstate = VisibilityState.Visible;
+                    break;
+            }
+        }        
     }
 }
