@@ -391,6 +391,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 899119640487986715, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_LineWidth
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 899119640487986715, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SmoothMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065472539364554363, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SelectAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065472539364554363, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_Interactions
+      value: Hold
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065472539364554363, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065472539364554363, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 30fc1c4f-816a-4a41-b2de-21906855490e
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065472539364554363, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Select Action Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636957523464812157, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_HoverToSelect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164102531122316713, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_LineWidth
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164102531122316713, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_SmoothMovement
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8360284369324409112, guid: d2394f40fdcd779468f1231d487fd1f8,
         type: 3}
       propertyPath: m_Name
