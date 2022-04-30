@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad164500ea94fe4787076958dfdea6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameState: 0
   Pillows:
   - {fileID: 2242274369433146225}
   - {fileID: 2278823246065633571}
@@ -381,6 +382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Pillow_2 '
       objectReference: {fileID: 0}
+    - target: {fileID: 5106495217779396645, guid: 5a9877bd3fc5a29419bb0fbe642ed4b4,
+        type: 3}
+      propertyPath: Couch
+      value: 
+      objectReference: {fileID: 3353180923306278955}
     - target: {fileID: 8883184365910650082, guid: 5a9877bd3fc5a29419bb0fbe642ed4b4,
         type: 3}
       propertyPath: m_RootOrder
@@ -574,6 +580,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 54cf08f5df4afc8438a4b2fdb6642bb9, type: 2}
+    - target: {fileID: 7028900079558939880, guid: 85b097d48d4437e4e9cd360d4da41cef,
+        type: 3}
+      propertyPath: Couch
+      value: 
+      objectReference: {fileID: 3353180923306278955}
     - target: {fileID: 7028900079558939881, guid: 85b097d48d4437e4e9cd360d4da41cef,
         type: 3}
       propertyPath: m_Name
@@ -647,6 +658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillow_2
       objectReference: {fileID: 0}
+    - target: {fileID: 5106495217779396645, guid: 5a9877bd3fc5a29419bb0fbe642ed4b4,
+        type: 3}
+      propertyPath: Couch
+      value: 
+      objectReference: {fileID: 3353180923306278955}
     - target: {fileID: 8883184365910650082, guid: 5a9877bd3fc5a29419bb0fbe642ed4b4,
         type: 3}
       propertyPath: m_RootOrder
@@ -930,6 +946,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 54cf08f5df4afc8438a4b2fdb6642bb9, type: 2}
+    - target: {fileID: 7028900079558939880, guid: 85b097d48d4437e4e9cd360d4da41cef,
+        type: 3}
+      propertyPath: Couch
+      value: 
+      objectReference: {fileID: 3353180923306278955}
     - target: {fileID: 7028900079558939881, guid: 85b097d48d4437e4e9cd360d4da41cef,
         type: 3}
       propertyPath: m_Name
