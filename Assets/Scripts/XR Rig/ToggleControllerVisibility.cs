@@ -61,4 +61,22 @@ public class ToggleControllerVisibility : MonoBehaviour
             }
         }        
     }
+    public void turnOffLeftRay()
+    {
+        _leftRay.enabled = false;
+    }
+    public void turnOnLeftRay()
+    {
+        _leftRay.enabled = true;
+    }
+    public void turnOffRightRay()
+    {
+        _rightRay.enabled = false;
+    }
+    public void turnOnRightRay()
+    {
+        _rightRay.enabled = true;
+    }
+
 }
+
