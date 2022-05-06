@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: How to Play Controllers Text_nl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: nl
+  m_SharedData: {fileID: 11400000, guid: aa9c683dc0da7a040b1b14a202bb2c4a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 82639249408
+    m_Localized: Hoe speel je met controllers / handen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310754861056
+    m_Localized: Ga Terug
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345492086784
+    m_Localized: Handen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 384230678528
+    m_Localized: Teleporteren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 596277911552
+    m_Localized: Terugkeren naar het hoofdmenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758664585216
+    m_Localized: 'Om hand-besturing in te schakelen, leg je controllers neer en wacht
+      een paar seconden.
+
+
+      Wijs naar een object en druk je wijsvinger en duim
+      tegen elkaar om het te selecteren.
+
+
+      Als een item selecteerbaar is, zal
+      je straal blauw worden.
+
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1643339767808
+    m_Localized: 'Wijs naar een object en druk op de grip knop om het te selecteren.
+      (de knop aan je middelvinger)
+
+
+      Als een item selecteerbaar is, zal je
+      straal blauw worden.
+
+
+      Op snel rond te draaien, raak snel de joystick
+      aan in de richting dat je wil draaien.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2091559870464
+    m_Localized: 'Wijs naar de vloer en selecteer het om te teleporteren naar deze
+      locatie.
+
+
+      Selecteer een teleporteerveld om te teleporteren naar het
+      veld, dit is een belangrijke locatie.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3126357581824
+    m_Localized: Om terug te keren naar het menu, druk op de pauze knop in het midden
+      van de kamer.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

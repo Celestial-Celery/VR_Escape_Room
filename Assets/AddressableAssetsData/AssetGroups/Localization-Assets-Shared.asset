@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e30b05a2ea4841348b2e3c58f699aa7a
+  m_SerializeEntries:
+  - m_GUID: 3f7e54d6c9e892a4684449f33250c98a
+    m_Address: Assets/Localization/Tables/Pause Menu Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: d445bced0ebc19149bd4807fe997cf09
+    m_Address: Assets/Localization/Tables/Main Menu Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 5547e6a3dd09dce468fe008e398a819e
+    m_Address: Assets/Localization/Tables/Settings Menu Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 2a41d3e69a4d7954f8c13d3221824a8b
+    m_Address: Assets/Localization/Tables/How To Play Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: aa9c683dc0da7a040b1b14a202bb2c4a
+    m_Address: Assets/Localization/Tables/How to Play Controllers Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 1737f1c9f8989c642b1e44920879af95
+    m_Address: Assets/Localization/Tables/How To Play BCI Text Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 8b4e48b42a8a3e24a86a7cc9073eebf9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 25773e64b63169544a62e64b247ebad9, type: 2}
+    - {fileID: 11400000, guid: ef7a6f3ef4954c14d9ff44c8030f563b, type: 2}
