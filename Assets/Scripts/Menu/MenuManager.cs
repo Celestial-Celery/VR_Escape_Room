@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
@@ -41,6 +42,22 @@ public class MenuManager : MonoBehaviour
         SetButtonValues();
     }
 
+    public IEnumerator setLanguage()
+    {
+        yield return LocalizationSettings.InitializationOperation;
+
+        if (PlayerPrefs.GetInt("dutch") == 1)
+        {
+            Debug.Log("Setting language to dutch");
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
+        }
+        else
+        {
+            Debug.Log("Setting language to english");
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[1];
+        }
+    }
+
     private void SetButtonValues()
     {
         dutchToggle.isOn = PlayerPrefs.GetInt("dutch") == 1;
@@ -56,6 +73,8 @@ public class MenuManager : MonoBehaviour
         standingToggle.isOn = PlayerPrefs.GetInt("standing") == 1;
         sittingToggle.isOn = PlayerPrefs.GetInt("sitting") == 1;
 
+        StartCoroutine(setLanguage());
+
         canChange = true;
     }
 
@@ -66,6 +85,8 @@ public class MenuManager : MonoBehaviour
             PlayerPrefs.SetInt("english", englishToggle.isOn ? 1 : 0);
             PlayerPrefs.SetInt("dutch", dutchToggle.isOn ? 1 : 0);
             PlayerPrefs.Save();
+
+            StartCoroutine(setLanguage());
         }
     }
 

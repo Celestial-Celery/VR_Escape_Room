@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 8360284369324409112, guid: d2394f40fdcd779468f1231d487fd1f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8442025603987742997, guid: d2394f40fdcd779468f1231d487fd1f8,
         type: 3}
       propertyPath: m_RootOrder
@@ -481,17 +486,17 @@ PrefabInstance:
     - target: {fileID: 2158243643873212662, guid: d083ecb5843dca1449ecbb2dbe137f74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.945
       objectReference: {fileID: 0}
     - target: {fileID: 2158243643873212662, guid: d083ecb5843dca1449ecbb2dbe137f74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.904
       objectReference: {fileID: 0}
     - target: {fileID: 2158243643873212662, guid: d083ecb5843dca1449ecbb2dbe137f74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.139
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2158243643873212662, guid: d083ecb5843dca1449ecbb2dbe137f74,
         type: 3}
