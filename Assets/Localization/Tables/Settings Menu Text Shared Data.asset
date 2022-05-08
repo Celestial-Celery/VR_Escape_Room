@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Settings Menu Text Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Settings Menu Text
+  m_TableCollectionNameGuidString: 5547e6a3dd09dce468fe008e398a819e
+  m_Entries:
+  - m_Id: 8165187584
+    m_Key: Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60686262272
+    m_Key: Go Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187350048768
+    m_Key: Accessibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333156638720
+    m_Key: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397212049408
+    m_Key: Difficulty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 485435039744
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 594809905152
+    m_Key: Free Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663273529344
+    m_Key: Sitting Only
+    m_Metadata:
+      m_Items: []
+  - m_Id: 748875079680
+    m_Key: Controllers / Hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 852084318208
+    m_Key: Brain Interface
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1092510212096
+    m_Key: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1148365758464
+    m_Key: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1201234960384
+    m_Key: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1304351924224
+    m_Key: Dutch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1354738098176
+    m_Key: English
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1651857686403
