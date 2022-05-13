@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    public SettingsManager settingsManager;
+    public GameObject XRRig;
+
     public GameObject mainMenuCanvas;
     public GameObject settingsCanvas;
     public GameObject howToPlayCanvas;
@@ -25,8 +28,6 @@ public class MenuManager : MonoBehaviour
 
     public Toggle standingToggle;
     public Toggle sittingToggle;
-
-
 
 
     private bool canChange = false;
@@ -75,6 +76,7 @@ public class MenuManager : MonoBehaviour
 
         StartCoroutine(setLanguage());
 
+        settingsManager.LoadSettings();
         canChange = true;
     }
 
@@ -119,11 +121,12 @@ public class MenuManager : MonoBehaviour
             PlayerPrefs.SetInt("sitting", sittingToggle.isOn ? 1 : 0);
             PlayerPrefs.Save();
         }
+        settingsManager.SetUserHeight();
     }
 
     public void StartGame()
     {
-
+        //tp to start location
     }    
 
     public void ShowCredits()
