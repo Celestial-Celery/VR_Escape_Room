@@ -24,6 +24,8 @@ public class HandManager : MonoBehaviour
     private bool leftPinching = false;
     private bool rightPinching = false;
 
+    private bool canRightSelect = true;
+
     private SelectEnterEventArgs _leftSelectEnterArgs;
     private SelectEnterEventArgs _rightSelectEnterArgs;
 
@@ -81,7 +83,12 @@ public class HandManager : MonoBehaviour
     private void checkFingerPinch()
     {
         leftPinching = _leftHand.GetFingerIsPinching(HandFinger.Index);
-        rightPinching = _rightHand.GetFingerIsPinching(HandFinger.Index);        
+        rightPinching = _rightHand.GetFingerIsPinching(HandFinger.Index);
+
+        if (!rightPinching)
+        {
+            canRightSelect = true;
+        }
     }
 
     private void leftSelect()
@@ -100,8 +107,9 @@ public class HandManager : MonoBehaviour
     {
         IXRSelectInteractable _xRRightSelectedObject = performRightRaycast();
 
-        if (rightPinching && _xRRightSelectedObject != null)
+        if (rightPinching && canRightSelect && _xRRightSelectedObject != null)
         {
+            canRightSelect = false;
             _rightSelectEnterArgs.manager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
             _rightSelectEnterArgs.manager.SelectEnter(GameObject.Find("RightHandAnchor").GetComponent<IXRSelectInteractor>(), _xRRightSelectedObject);
             GameObject.Find("RightHandAnchor").GetComponent<XRRayInteractor>().selectEntered = new SelectEnterEvent();
