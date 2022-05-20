@@ -481,10 +481,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4259543474154721415, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259543474154726531, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4259543474154868081, guid: 11f14a29386cf734595682d58d69a171,
         type: 3}
       propertyPath: m_Name
       value: Custom Camera Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583811263497192436, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6583811263497192436, guid: 11f14a29386cf734595682d58d69a171,
         type: 3}
@@ -501,6 +516,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d65f7f2c76a431541aafcba31fad0a83, type: 2}
+    - target: {fileID: 8222001452718112451, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8222001452718112451, guid: 11f14a29386cf734595682d58d69a171,
         type: 3}
       propertyPath: m_Parameters.widthMultiplier

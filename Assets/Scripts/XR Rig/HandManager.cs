@@ -25,9 +25,12 @@ public class HandManager : MonoBehaviour
     private bool rightPinching = false;
 
     private bool canRightSelect = true;
+    private bool canLeftSelect = true;
 
     private SelectEnterEventArgs _leftSelectEnterArgs;
     private SelectEnterEventArgs _rightSelectEnterArgs;
+    private ActivateEventArgs _leftActivateEventArgs;
+    private ActivateEventArgs _rightActivateEventArgs;
 
 
     public static bool handsActive = false;
@@ -37,6 +40,8 @@ public class HandManager : MonoBehaviour
     {
         _leftSelectEnterArgs = new SelectEnterEventArgs();
         _rightSelectEnterArgs = new SelectEnterEventArgs();
+        _leftActivateEventArgs = new ActivateEventArgs();
+        _rightActivateEventArgs = new ActivateEventArgs();
 
         _leftRayAnchor = GameObject.Find("[LeftHandAnchor] Ray Origin").transform;
         _rightRayAnchor = GameObject.Find("[RightHandAnchor] Ray Origin").transform;
@@ -89,13 +94,17 @@ public class HandManager : MonoBehaviour
         {
             canRightSelect = true;
         }
+        if (!leftPinching)
+        {
+            canLeftSelect = true;
+        }
     }
 
     private void leftSelect()
     {
         IXRSelectInteractable _xRLeftSelectedObject = performLeftRaycast();
 
-        if (leftPinching && _xRLeftSelectedObject != null)
+        if (leftPinching && canLeftSelect && _xRLeftSelectedObject != null)
         {
             _leftSelectEnterArgs.manager = GameObject.Find("XR Interaction Manager").GetComponent<XRInteractionManager>();
             _leftSelectEnterArgs.manager.SelectEnter(GameObject.Find("LeftHandAnchor").GetComponent<IXRSelectInteractor>(), _xRLeftSelectedObject);
@@ -130,7 +139,7 @@ public class HandManager : MonoBehaviour
             catch{}
         }
         return _xRLeftSelectedObject;
-    }
+    }    
 
     private IXRSelectInteractable performRightRaycast()
     {
@@ -144,6 +153,38 @@ public class HandManager : MonoBehaviour
                 _xRRightSelectedObject = rightHit.transform.gameObject.GetComponent<IXRSelectInteractable>();
             }
             catch{}
+        }
+        return _xRRightSelectedObject;
+    }
+
+    private IXRActivateInteractable performLeftActivateRaycast()
+    {
+        IXRActivateInteractable _xRLeftSelectedObject = null;
+        RaycastHit leftHit;
+
+        if (Physics.Raycast(_leftRayAnchor.position, _leftRayAnchor.TransformDirection(Vector3.forward), out leftHit))
+        {
+            try
+            {
+                _xRLeftSelectedObject = leftHit.transform.gameObject.GetComponent<IXRActivateInteractable>();
+            }
+            catch { }
+        }
+        return _xRLeftSelectedObject;
+    }
+
+    private IXRActivateInteractable performRightActivateRaycast()
+    {
+        IXRActivateInteractable _xRRightSelectedObject = null;
+        RaycastHit rightHit;
+
+        if (Physics.Raycast(_rightRayAnchor.position, _rightRayAnchor.TransformDirection(Vector3.forward), out rightHit))
+        {
+            try
+            {
+                _xRRightSelectedObject = rightHit.transform.gameObject.GetComponent<IXRActivateInteractable>();
+            }
+            catch { }
         }
         return _xRRightSelectedObject;
     }

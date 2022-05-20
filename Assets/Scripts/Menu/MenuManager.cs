@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public SettingsManager settingsManager;
+    public GameObject XRRig;
+
     public GameObject mainMenuCanvas;
     public GameObject settingsCanvas;
     public GameObject howToPlayCanvas;
@@ -26,7 +30,7 @@ public class MenuManager : MonoBehaviour
     public Toggle standingToggle;
     public Toggle sittingToggle;
 
-
+    public Door Door;
 
 
     private bool canChange = false;
@@ -75,6 +79,7 @@ public class MenuManager : MonoBehaviour
 
         StartCoroutine(setLanguage());
 
+        settingsManager.LoadSettings();
         canChange = true;
     }
 
@@ -119,12 +124,20 @@ public class MenuManager : MonoBehaviour
             PlayerPrefs.SetInt("sitting", sittingToggle.isOn ? 1 : 0);
             PlayerPrefs.Save();
         }
+        settingsManager.SetUserHeight();
     }
 
     public void StartGame()
     {
-
+        StartCoroutine(LoadGameScene());
     }    
+
+    private IEnumerator LoadGameScene()
+    {
+        Door.Open();
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("Game_Manager_Test_Scene"); //test
+    }
 
     public void ShowCredits()
     {
