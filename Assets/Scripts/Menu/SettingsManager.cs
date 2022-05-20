@@ -17,7 +17,7 @@ public class SettingsManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("sitting") == 1)
         {
-            XRRig.transform.localPosition = new Vector3(0,0.40f,0);
+            XRRig.transform.localPosition = new Vector3(0,0.30f,0);
         }
         else
         {

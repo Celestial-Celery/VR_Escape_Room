@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class MenuManager : MonoBehaviour
 
     public Toggle standingToggle;
     public Toggle sittingToggle;
+
+    public Door Door;
 
 
     private bool canChange = false;
@@ -126,8 +129,15 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        //tp to start location
+        StartCoroutine(LoadGameScene());
     }    
+
+    private IEnumerator LoadGameScene()
+    {
+        Door.Open();
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("Game_Manager_Test_Scene"); //test
+    }
 
     public void ShowCredits()
     {
