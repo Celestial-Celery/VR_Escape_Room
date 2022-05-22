@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 2440202008856234249, guid: 06f637d3c39ad8343ab9651a912c92ea, type: 3}
   - {fileID: 9085576010412482194, guid: 31084097016ed384b90d54cd8f6cd3ee, type: 3}
   - {fileID: 1505251691845018844, guid: a4371f59e66f0a04aa46ef0edff6b0e8, type: 3}
+  Key: {fileID: 8320078215244516874, guid: cf9e60fea95c53440811fd6423aa10a8, type: 3}
   MirrorRoom: {fileID: 3027514349167814515}
   Hint1PlaceHolder: {fileID: 2869507451900759760}
   Hint2PlaceHolder: {fileID: 8724667370693808380}

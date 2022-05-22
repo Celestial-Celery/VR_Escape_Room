@@ -21,6 +21,8 @@ public class MemoryGame : Game
     #endregion
 
     #region Public properties
+    public Key Key;
+
     public PlayingCardDeck Deck;
     public int Pairs;
     public int Rotation;
@@ -229,11 +231,18 @@ public class MemoryGame : Game
         Debug.Log("Memory game completed");
         // Code for game completed here
         this.GameState = GameState.Completed;
+
+        this.SpawnKey();
     }
 
     private void FixRotation()
     {
         this.gameObject.transform.rotation = Quaternion.Euler(0, this.Rotation, 0);
+    }
+
+    private void SpawnKey()
+    {
+        Key key = Instantiate(Key, this.transform.position, this.transform.rotation);
     }
     #endregion
 

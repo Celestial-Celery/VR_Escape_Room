@@ -33,7 +33,7 @@ public class Couch : Game
     //Puts key under the pillow that has the key
     private void SpawnKey(Pillow pillow)
     {
-        GameObject key = GameObject.Find("Key_Couch");
+        GameObject key = GameObject.Find("Key_3");
         Transform keypos = pillow.transform.GetChild(0).transform;
         key.transform.position = keypos.position;
     }

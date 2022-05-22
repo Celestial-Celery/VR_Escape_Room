@@ -29,6 +29,8 @@ public class Button_Game : Game
     public Numpad_Button[] Buttons;
     public GameObject[] Hints;
 
+    public Key Key;
+
     public GameObject MirrorRoom;
     public GameObject Hint1PlaceHolder;
     public GameObject Hint2PlaceHolder;
@@ -180,6 +182,13 @@ public class Button_Game : Game
         Debug.Log("Button game completed!");
         //Send game completed to game manager
         this.GameState = GameState.Completed;
+
+        this.SpawnKey();
+    }
+
+    private void SpawnKey()
+    {
+        Key key = Instantiate(Key, this.transform.position, this.transform.rotation);
     }
     #endregion
 
