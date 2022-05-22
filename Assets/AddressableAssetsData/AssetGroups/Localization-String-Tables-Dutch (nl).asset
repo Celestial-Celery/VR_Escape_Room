@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Dutch (nl)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Dutch (nl)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6a3a65593ec1af24bae6efdbc4207850
+  m_SerializeEntries:
+  - m_GUID: bcbe4edf5174fc24a824c6355111884b
+    m_Address: Pause Menu Text_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
+  - m_GUID: a87da41dd02324944b1376d70ac5eb3c
+    m_Address: Main Menu Text_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
+  - m_GUID: e5e261038cfdbbc4f845a3f7468a2f45
+    m_Address: Settings Menu Text_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
+  - m_GUID: cc462824ff4b4874aa592aeaedeaab00
+    m_Address: How To Play Text_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
+  - m_GUID: 10d59592c67378b4d92071d6efb54e3d
+    m_Address: How to Play Controllers Text_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
+  - m_GUID: 32db0039fbddec24eb57929c6e6ba60d
+    m_Address: How To Play BCI Text_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 8b4e48b42a8a3e24a86a7cc9073eebf9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 93b7f56d43630a645be64dc24571a0a4, type: 2}
+    - {fileID: 11400000, guid: a11eb645c24c6244fb529667a11c0076, type: 2}

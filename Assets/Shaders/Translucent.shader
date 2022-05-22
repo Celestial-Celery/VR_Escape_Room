@@ -321,7 +321,7 @@ SurfaceDescription SurfaceDescriptionFunction(SurfaceDescriptionInputs IN)
     surface.Smoothness = _Property_95bd6c09c7a741deba68b7b08317e2f6_Out_0;
     surface.Occlusion = 1;
     surface.Alpha = _Property_873280f8a3764ed18f0edff1912e0d94_Out_0;
-    surface.AlphaClipThreshold = 0.5;
+    surface.AlphaClipThreshold = 0;
     return surface;
 }
 

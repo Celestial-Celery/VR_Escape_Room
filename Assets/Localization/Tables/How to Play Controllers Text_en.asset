@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: How to Play Controllers Text_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: aa9c683dc0da7a040b1b14a202bb2c4a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 82639249408
+    m_Localized: How to play with controllers / hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310754861056
+    m_Localized: Go Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345492086784
+    m_Localized: Hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 384230678528
+    m_Localized: Teleporting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 596277911552
+    m_Localized: Return to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 758664585216
+    m_Localized: 'To enable hands, put your controllers down and wait a couple seconds.
+
+
+      Point
+      at an object and pinch your fingers to select it.
+
+
+      If an item is selectable,
+      your ray will turn blue.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1643339767808
+    m_Localized: 'Point at an object and press the grip button to select it.
+
+
+      If
+      an item is selectable, your ray will turn blue.
+
+
+      To quickly turn around,
+      touch the joystick quickly in the direction you want to turn.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2091559870464
+    m_Localized: 'Point at the floor and press select to teleport to that location.
+
+
+      Select
+      a teleport pad to teleport to the pad with the correct orientation, this is
+      an important location.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3126357581824
+    m_Localized: To return to the menu, press the pause button in the middle of the
+      room.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

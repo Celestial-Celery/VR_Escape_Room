@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-English (en)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-English (en)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 61af282e2e78fcd43a34d10a0f86319b
+  m_SerializeEntries:
+  - m_GUID: 4a70c199c523730478137073f0e63b73
+    m_Address: Pause Menu Text_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 94e84a0b326e23b4f98ed46c0f467992
+    m_Address: Main Menu Text_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 80d81f4b6e2bfa34c8d462e2d2c2aeb8
+    m_Address: Settings Menu Text_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: e1474287a65eb2d4da73d0a2a8b69d23
+    m_Address: How To Play Text_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 316ee5f6a8fe77b4faa83a4a25eae171
+    m_Address: How to Play Controllers Text_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  - m_GUID: 305062e0ecc037f48bdc657e52dda6ee
+    m_Address: How To Play BCI Text_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 8b4e48b42a8a3e24a86a7cc9073eebf9, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c10cf2a08cb0d8240ac7787a0e83d629, type: 2}
+    - {fileID: 11400000, guid: e263d253b9ad90a469c0e2cbddb0302e, type: 2}

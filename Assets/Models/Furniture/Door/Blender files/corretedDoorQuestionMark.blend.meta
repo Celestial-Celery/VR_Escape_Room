@@ -1,9 +1,27 @@
 fileFormatVersion: 2
-guid: 400935a05ffefeb45bc1fc3159c7fefd
+guid: 349b16ac24b0e334297c4fc361498b97
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: -623603649343465320
+    second: Scene
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 7d2ac041763bbca458247fec8bbeab06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_2
+    second: {fileID: 2100000, guid: ee7cf621e59580044afcac93c2a7aec0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glossy
+    second: {fileID: 2100000, guid: d03fa6a5294e29b4cb2b1ad6a3595156, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
