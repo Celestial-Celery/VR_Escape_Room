@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &638926330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638926332}
+  - component: {fileID: 638926331}
+  m_Layer: 0
+  m_Name: BCIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &638926331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638926330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549c9fe7779909b4380bffdcf5798250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _device: {fileID: 11400000, guid: 9d45af67d3b6c23418e093b20c47988a, type: 2}
+--- !u!4 &638926332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638926330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.025247062, y: 1.4615672, z: 2.044837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &941107617 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 5189475175160810487, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5189475175751651768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099451386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8360284369324409112, guid: d2394f40fdcd779468f1231d487fd1f8,
@@ -398,6 +448,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5189475175160810487, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 14.478091
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189475175410714178, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5189475175458853404, guid: b3226732feb8a1c4ba927303c8a0e0b2,
         type: 3}
       propertyPath: m_Name
@@ -463,6 +523,22 @@ PrefabInstance:
       propertyPath: XRRig
       value: 
       objectReference: {fileID: 1745793017}
+    - target: {fileID: 5189475176023343506, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+        type: 3}
+      propertyPath: _device
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d45af67d3b6c23418e093b20c47988a,
+        type: 2}
+    - target: {fileID: 5189475176023343506, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+        type: 3}
+      propertyPath: mindLight
+      value: 
+      objectReference: {fileID: 941107617}
+    - target: {fileID: 5189475176023343506, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+        type: 3}
+      propertyPath: bciManager
+      value: 
+      objectReference: {fileID: 638926331}
     - target: {fileID: 5189475176023343506, guid: b3226732feb8a1c4ba927303c8a0e0b2,
         type: 3}
       propertyPath: settingsManager

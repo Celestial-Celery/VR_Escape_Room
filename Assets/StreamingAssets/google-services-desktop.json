@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "837620408626",
+    "firebase_url": "https://tetrahedron-crown-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tetrahedron-crown",
+    "storage_bucket": "tetrahedron-crown.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837620408626:android:6f5d966771971c9b11772b",
+        "android_client_info": {
+          "package_name": "com.celestialcelery.vr.escaperoom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837620408626-nib4q3jlaijrce9slj4rspi7fn6ta0f8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjyP52AfQS6uqADcnXM7PHAQ6D0nY6iYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837620408626-nib4q3jlaijrce9slj4rspi7fn6ta0f8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

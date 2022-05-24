@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using NeurositySDK;
 public class MenuManager : MonoBehaviour
 {
     public SettingsManager settingsManager;
+    public BCIManager bciManager;
     public GameObject XRRig;
 
     public GameObject mainMenuCanvas;
@@ -32,8 +33,10 @@ public class MenuManager : MonoBehaviour
 
     public Door Door;
 
-
     private bool canChange = false;
+    
+    [SerializeField]
+    Light mindLight;
 
     private void Start()
     {
@@ -44,6 +47,12 @@ public class MenuManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         SetButtonValues();
+    }
+
+    public void influenceLight(float propability)
+    {
+
+        mindLight.intensity = Mathf.Lerp(10, 100, propability);
     }
 
     public IEnumerator setLanguage()
@@ -111,7 +120,25 @@ public class MenuManager : MonoBehaviour
         if (canChange)
         {
             PlayerPrefs.SetInt("normalcontrols", normalControlsToggle.isOn ? 1 : 0);
-            PlayerPrefs.SetInt("bcicontrols", bciControlsToggle.isOn ? 1 : 0);
+            if (bciControlsToggle.isOn)
+            {
+                bciManager.Login();
+                bciManager.GetDevices();
+                bciManager.GetStatus();
+                bciManager.SubscribeCalm(new CalmHandler
+                {
+                    OnCalmUpdated = (propability) => {
+                        influenceLight(propability);
+                    }
+                });
+                PlayerPrefs.SetInt("bcicontrols", 1);
+            }
+            else
+            {
+                bciManager.Logout();
+                PlayerPrefs.SetInt("bcicontrols", 0);
+            }
+
             PlayerPrefs.Save();
         }
     }

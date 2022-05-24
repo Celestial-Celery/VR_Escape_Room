@@ -1,0 +1,3 @@
+[submodule "Assets/neurosity-unity-sdk"]
+	path = Assets/neurosity-unity-sdk
+	url = git@github.com:tetr4hedronclan/neurosity-unity-sdk.git
