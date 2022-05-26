@@ -188,7 +188,7 @@ public class Button_Game : Game
 
     private void SpawnKey()
     {
-        Key key = Instantiate(Key, this.transform.position, this.transform.rotation);
+        Key key = Instantiate(Key, this.transform.position + new Vector3(-0.13f, -0.055f, -0.045f), this.transform.rotation * new Quaternion(0,1,1,0));
     }
     #endregion
 

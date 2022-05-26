@@ -242,7 +242,7 @@ public class MemoryGame : Game
 
     private void SpawnKey()
     {
-        Key key = Instantiate(Key, this.transform.position, this.transform.rotation);
+        Key key = Instantiate(Key, this.transform.position + new Vector3(0, 0.55f, 0), this.transform.rotation);
     }
     #endregion
 
