@@ -44,8 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ac5f257c763b04c8ed1be95b67f2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameState: 0
+  Key: {fileID: 4129820300898848344, guid: d4ec02a040f678a4b876714c6000e165, type: 3}
   Deck: {fileID: 5832745263753027492, guid: a77f8cb7aba070844908bc9b1b359f13, type: 3}
   Pairs: 6
+  Rotation: 0
 --- !u!1001 &8846854599696150023
 PrefabInstance:
   m_ObjectHideFlags: 0
