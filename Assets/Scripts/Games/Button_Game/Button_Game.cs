@@ -31,6 +31,8 @@ public class Button_Game : Game
 
     public Key Key;
 
+    public GameObject keyPlaceHolder;
+
     public GameObject MirrorRoom;
     public GameObject Hint1PlaceHolder;
     public GameObject Hint2PlaceHolder;
@@ -88,7 +90,7 @@ public class Button_Game : Game
 
     private void FixedUpdate()
     {
-        if (!this._gameStarted)
+        if (!this._gameStarted && !this._gameCompleted)
         {
             this._gameStarted = true;
             StartCoroutine(ButtonGameLogic());
@@ -188,7 +190,7 @@ public class Button_Game : Game
 
     private void SpawnKey()
     {
-        Key key = Instantiate(Key, this.transform.position + new Vector3(-0.13f, -0.055f, -0.045f), this.transform.rotation * new Quaternion(0,1,1,0));
+        Key key = Instantiate(Key, this.keyPlaceHolder.transform.position, this.keyPlaceHolder.transform.rotation); //+ new Vector3(-0.13f, -0.055f, -0.045f)    * new Quaternion(0,1,1,0)
     }
     #endregion
 
