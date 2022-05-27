@@ -10,6 +10,9 @@ public enum GameState
 }
 public class Game : MonoBehaviour
 {
+    public FinalDoor Door;
+    public Key Key;
+
     public GameState GameState;
 
     private void Start()

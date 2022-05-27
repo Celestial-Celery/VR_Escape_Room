@@ -12,9 +12,21 @@ public class Key : MonoBehaviour
 
     void Update()
     {
-        if (_found)
+        if (HandManager.handsActive)
         {
-
+            if(this.Number == 3) //yikes code but idk how else
+            {
+                if (this._found)
+                {
+                    Debug.Log("Hands active and key 3 found");
+                    this.PickUp();
+                }
+            }
+            else
+            {
+                this.PickUp();
+            }
+            
         }
     }
     public void Found()
@@ -24,7 +36,7 @@ public class Key : MonoBehaviour
 
     public void PickUp()
     {
-        switch (Number)
+        switch (this.Number)
         {
             case 1:
                 this.Door.AddKey1(this.gameObject);

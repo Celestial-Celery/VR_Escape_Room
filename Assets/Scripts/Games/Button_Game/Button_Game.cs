@@ -29,8 +29,6 @@ public class Button_Game : Game
     public Numpad_Button[] Buttons;
     public GameObject[] Hints;
 
-    public Key Key;
-
     public GameObject keyPlaceHolder;
 
     public GameObject MirrorRoom;
@@ -191,6 +189,7 @@ public class Button_Game : Game
     private void SpawnKey()
     {
         Key key = Instantiate(Key, this.keyPlaceHolder.transform.position, this.keyPlaceHolder.transform.rotation); //+ new Vector3(-0.13f, -0.055f, -0.045f)    * new Quaternion(0,1,1,0)
+        key.Door = this.Door;
     }
     #endregion
 

@@ -38,7 +38,7 @@ public class Pillow : MonoBehaviour
 
     public void Select()
     {
-        Couch.Select(this, GameObject.Find("Key_Couch").GetComponent<Key>(), this.Couch);
+        Couch.Select(this);
 
         if (HandManager.handsActive)
         {
