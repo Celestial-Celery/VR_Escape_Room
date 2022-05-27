@@ -196,30 +196,33 @@ public class Button_Game : Game
     #region Public methods
     public void PressButton(Numpad_Button button)
     {
-        if (button.NumpadValue == NumpadValue.reset)
+        if(this.GameState == GameState.InProgress)
         {
-            //Reset had been pressed
-            button.Press();
-            this._buttonGameState = ButtonGameState.ClearingNumpad;
-        }
-        else if (button.NumpadValue == NumpadValue.enter)
-        {
-            //Code has been entered
-            button.Press();
-            this._buttonGameState = ButtonGameState.CheckingCode;
-        }
-        else
-        {
-            if (!this._pressedButtons.Contains(button))
+            if (button.NumpadValue == NumpadValue.reset)
             {
-                if (this._pressedButtons.Count < 3)
+                //Reset had been pressed
+                button.Press();
+                this._buttonGameState = ButtonGameState.ClearingNumpad;
+            }
+            else if (button.NumpadValue == NumpadValue.enter)
+            {
+                //Code has been entered
+                button.Press();
+                this._buttonGameState = ButtonGameState.CheckingCode;
+            }
+            else
+            {
+                if (!this._pressedButtons.Contains(button))
                 {
-                    this._pressedButtons.Add(button);
-                    button.Press();
-                }
-                else //needed?
-                {
-                    button.Selected = false;
+                    if (this._pressedButtons.Count < 3)
+                    {
+                        this._pressedButtons.Add(button);
+                        button.Press();
+                    }
+                    else //needed?
+                    {
+                        button.Selected = false;
+                    }
                 }
             }
         }
