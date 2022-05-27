@@ -21,8 +21,6 @@ public class MemoryGame : Game
     #endregion
 
     #region Public properties
-    public Key Key;
-
     public PlayingCardDeck Deck;
     public int Pairs;
     public int Rotation;
@@ -243,6 +241,7 @@ public class MemoryGame : Game
     private void SpawnKey()
     {
         Key key = Instantiate(Key, this.transform.position + new Vector3(0, 0.55f, 0), this.transform.rotation);
+        key.Door = this.Door;
     }
     #endregion
 

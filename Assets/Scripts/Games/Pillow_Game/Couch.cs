@@ -7,6 +7,8 @@ public class Couch : Game
     private int _keyPos;
     private static bool _keyfound = false;
 
+    private Key keyInGame;
+
     //Called on start
     void Start()
     {
@@ -19,12 +21,12 @@ public class Couch : Game
     }
 
     //Called by pillow when it is selected
-    public static void Select(Pillow pillow, Key _key, Couch couch)
+    public void Select(Pillow pillow)
     {
         if (pillow.HasKey && !_keyfound)
         {
             _keyfound = true;
-            KeyFound(_key, couch);
+            this.KeyFound();
         }
         //Maybe something more elegant than just poof gone
         //Destroy(pillow.gameObject);
@@ -33,9 +35,10 @@ public class Couch : Game
     //Puts key under the pillow that has the key
     private void SpawnKey(Pillow pillow)
     {
-        GameObject key = GameObject.Find("Key_3");
+        keyInGame = Instantiate(this.Key, this.transform.position, this.transform.rotation);
+        keyInGame.Door = this.Door;
         Transform keypos = pillow.transform.GetChild(0).transform;
-        key.transform.position = keypos.position;
+        keyInGame.transform.position = keypos.position;
     }
 
     private void UnparentPillows()
@@ -48,10 +51,10 @@ public class Couch : Game
     }
 
     //Key found logic would be here
-    private static void KeyFound(Key _key, Couch couch)
+    private void KeyFound()
     {
-        _key.Found();
+        this.keyInGame.Found();
         Debug.Log("Key has been found!");
-        couch.GameState = GameState.InProgress;
+        this.GameState = GameState.Completed;
     }
 }
