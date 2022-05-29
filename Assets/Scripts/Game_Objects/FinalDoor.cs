@@ -18,28 +18,37 @@ public class FinalDoor : Door
 
     public void AddKey1(GameObject key)
     {
-        key.transform.rotation = Quaternion.Euler(90, -90, -90);
-        key.transform.position = keyHole1.transform.position + new Vector3(0.02f,0,0);
-        key.transform.parent = gameObject.transform;
-        key1Added = true;
+        if (!key1Added)
+        {
+            key.transform.rotation = Quaternion.Euler(90, -90, -90);
+            key.transform.position = keyHole1.transform.position + new Vector3(0.02f, 0, 0);
+            key.transform.parent = gameObject.transform;
+            key1Added = true;
+        }
         CheckIfOpen();
     }
 
     public void AddKey2(GameObject key)
     {
-        key.transform.rotation = Quaternion.Euler(90, -90, -90);
-        key.transform.position = keyHole2.transform.position + new Vector3(0.02f, 0, 0);
-        key.transform.parent = gameObject.transform;
-        key2Added = true;
+        if (!key2Added)
+        {
+            key.transform.rotation = Quaternion.Euler(90, -90, -90);
+            key.transform.position = keyHole2.transform.position + new Vector3(0.02f, 0, 0);
+            key.transform.parent = gameObject.transform;
+            key2Added = true;
+        }
         CheckIfOpen();
     }
 
     public void AddKey3(GameObject key)
     {
-        key.transform.rotation = Quaternion.Euler(90, -90, -90);
-        key.transform.position = keyHole3.transform.position + new Vector3(0.02f, 0, 0);
-        key.transform.parent = gameObject.transform;
-        key3Added = true;
+        if (!key3Added)
+        {
+            key.transform.rotation = Quaternion.Euler(90, -90, -90);
+            key.transform.position = keyHole3.transform.position + new Vector3(0.02f, 0, 0);
+            key.transform.parent = gameObject.transform;
+            key3Added = true;
+        }
         CheckIfOpen();
     }
 }
