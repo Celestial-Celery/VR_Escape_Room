@@ -35,7 +35,7 @@ public class Couch : Game
     //Puts key under the pillow that has the key
     private void SpawnKey(Pillow pillow)
     {
-        keyInGame = Instantiate(this.Key, this.transform.position, this.transform.rotation);
+        keyInGame = Instantiate(this.Key, this.transform.position, this.transform.rotation * new Quaternion(0,1,1,0));
         keyInGame.Door = this.Door;
         Transform keypos = pillow.transform.GetChild(0).transform;
         keyInGame.transform.position = keypos.position;
