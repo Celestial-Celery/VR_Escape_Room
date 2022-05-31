@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour
     public Toggle sittingToggle;
 
     public Door Door;
+    public Transform GameSpawnPoint;
 
 
     private bool canChange = false;
@@ -136,7 +137,8 @@ public class MenuManager : MonoBehaviour
     {
         Door.Open();
         yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene("Game_Manager_Test_Scene"); //test
+        XRRig.transform.position = GameSpawnPoint.position;
+        settingsManager.LoadSettings();
     }
 
     public void ShowCredits()
