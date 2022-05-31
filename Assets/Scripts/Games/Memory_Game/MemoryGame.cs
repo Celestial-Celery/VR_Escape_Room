@@ -75,9 +75,9 @@ public class MemoryGame : Game
         int rowLength = (Pairs * 2) / rowCount;
         int nextIndex = 0;
 
-        this._nextPosition.z = this.gameObject.transform.localPosition.z + (this._boardHeight / 2);
-        this._nextPosition.x = this.gameObject.transform.localPosition.x - (this._boardLength / 2);
-        this._nextPosition.y = this.gameObject.transform.localPosition.y + 0.56f;
+        this._nextPosition.z = this.gameObject.transform.position.z + (this._boardHeight / 2);
+        this._nextPosition.x = this.gameObject.transform.position.x - (this._boardLength / 2);
+        this._nextPosition.y = this.gameObject.transform.position.y + 0.56f;
 
         for (int rowNr = 0; rowNr < rowCount; rowNr++)
         {
