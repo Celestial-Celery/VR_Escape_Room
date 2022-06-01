@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/How To Play BCI Text Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 739130a06a983d141bc945cb9d86c424
+    m_Address: Assets/Localization/Tables/Gam Completed Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 8b4e48b42a8a3e24a86a7cc9073eebf9, type: 2}
   m_SchemaSet:

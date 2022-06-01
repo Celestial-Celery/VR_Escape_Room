@@ -13,6 +13,7 @@ public class TeleportToMenu : MonoBehaviour
     public void Teleport()
     {
         menuManager.MenuRoom.SetActive(true);
+        menuManager.ShowGameCompleted();
         if (GameObject.Find("Game_Manager").GetComponent<GameManager>().EscapeRoomState == GameManagerState.Ended)
         {
             //teleportRequest.destinationPosition = menuSpawnPoint.position;

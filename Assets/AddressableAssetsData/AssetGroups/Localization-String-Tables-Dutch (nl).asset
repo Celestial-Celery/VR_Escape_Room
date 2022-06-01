@@ -53,6 +53,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-nl
     - Preload
+  - m_GUID: 66d011801903cb9498304d981b5f4204
+    m_Address: Game Completed_nl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-nl
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 8b4e48b42a8a3e24a86a7cc9073eebf9, type: 2}
   m_SchemaSet:

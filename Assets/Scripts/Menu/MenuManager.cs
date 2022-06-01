@@ -190,12 +190,14 @@ public class MenuManager : MonoBehaviour
         settingsCanvas.SetActive(false);
         howToPlayCanvas.SetActive(false);
         creditsCanvas.SetActive(false);
+        gameCompletedCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
     }
 
     public void ShowGameCompleted()
     {
-        
+        mainMenuCanvas.SetActive(false);
+        gameCompletedCanvas.SetActive(true);
     }
 
     public void Quit()

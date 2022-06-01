@@ -45,6 +45,18 @@ public class MemoryGame : Game
 
     private int GetPairAmount()
     {
+        if(PlayerPrefs.GetInt("easy") == 1)
+        {
+            return 2;
+        }
+        else if (PlayerPrefs.GetInt("normal") == 1)
+        {
+            return 4;
+        }
+        else if (PlayerPrefs.GetInt("hard") == 1)
+        {
+            return 6;
+        }
         return 5;
     }
 
