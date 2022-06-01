@@ -267,21 +267,24 @@ public class MemoryGame : Game
     #region Public methods
     public void SelectCard(PlayingCard playingCard)
     {
-        if (!_selectedCards.Contains(playingCard))
+        if(_selectedCards.Count < 2)
         {
-            playingCard.Flip();
-            Debug.Log($"Selected card: {playingCard.Suit} {playingCard.Number}, total cards selected: {_selectedCards.Count + 1}");
-            this._selectedCards.Add(playingCard);
+            if (!_selectedCards.Contains(playingCard))
+            {
+                playingCard.Flip();
+                Debug.Log($"Selected card: {playingCard.Suit} {playingCard.Number}, total cards selected: {_selectedCards.Count + 1}");
+                this._selectedCards.Add(playingCard);
 
-            if (_selectedCards.Count == 2)
-            {
-                Debug.Log("got 2 cards");
-                this._cardsSelected = true;
-                this._pairChecked = false;
-            }
-            else
-            {
-                this._cardsSelected = false;
+                if (_selectedCards.Count == 2)
+                {
+                    Debug.Log("got 2 cards");
+                    this._cardsSelected = true;
+                    this._pairChecked = false;
+                }
+                else
+                {
+                    this._cardsSelected = false;
+                }
             }
         }
     }
