@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public Game[] Games;
 
     private bool _escapeRoomStarted;
-    private GameManagerState _escapeRoomState;
+    public GameManagerState EscapeRoomState;
     private int _gamesCount;
     private int _gamesCompleted;
 
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private void ResetEscapeRoom()
     {
         this._escapeRoomStarted = false;
-        this._escapeRoomState = GameManagerState.Start;
+        this.EscapeRoomState = GameManagerState.Start;
         this._gamesCount = Games.Length;
         this._gamesCompleted = 0;
     }
@@ -46,14 +46,14 @@ public class GameManager : MonoBehaviour
     {
         while (this._escapeRoomStarted)
         {
-            while(this._escapeRoomState == GameManagerState.Start)
+            while(this.EscapeRoomState == GameManagerState.Start)
             {
                 //Code that runs at the start of the escape room
                 this.StartEscapeRoom();
                 yield return null;
             }
 
-            while(this._escapeRoomState == GameManagerState.InProgress)
+            while(this.EscapeRoomState == GameManagerState.InProgress)
             {
                 //here code for when you are playing the escape room
                 this.CheckGameStates();
@@ -61,14 +61,14 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            while(this._escapeRoomState == GameManagerState.Completed)
+            while(this.EscapeRoomState == GameManagerState.Completed)
             {
                 //code to run when the escape room is completed
                 this.EndEscapeRoom();
                 yield return null;
             }
 
-            while(this._escapeRoomState == GameManagerState.Ended)
+            while(this.EscapeRoomState == GameManagerState.Ended)
             {
                 yield return null;
             }
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     {
         //Here code to start the game
         Debug.Log("Welcome to the escape room!");
-        this._escapeRoomState = GameManagerState.InProgress;
+        this.EscapeRoomState = GameManagerState.InProgress;
     }
 
     private void CheckGameStates()
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     {
         if (this._gamesCompleted == this._gamesCount)
         {
-            this._escapeRoomState = GameManagerState.Completed;
+            this.EscapeRoomState = GameManagerState.Completed;
         }
     }
 
@@ -107,6 +107,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You have completed the Escape room!");
         //here code that executes when the escape room ends
-        this._escapeRoomState = GameManagerState.Ended;
+        this.EscapeRoomState = GameManagerState.Ended;
     }
 }
