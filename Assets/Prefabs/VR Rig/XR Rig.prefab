@@ -258,6 +258,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d65f7f2c76a431541aafcba31fad0a83, type: 2}
     - target: {fileID: 1397491827444153212, guid: 11f14a29386cf734595682d58d69a171,
         type: 3}
+      propertyPath: m_AllowAnchorControl
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397491827444153212, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1939291812484522388}
@@ -335,6 +340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408604142217339676, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
+      propertyPath: m_AllowAnchorControl
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1408604142217339676, guid: 11f14a29386cf734595682d58d69a171,
         type: 3}
@@ -425,6 +435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LineWidth
       value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259543474154184333, guid: 11f14a29386cf734595682d58d69a171,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 4259543474154639697, guid: 11f14a29386cf734595682d58d69a171,
         type: 3}

@@ -35,10 +35,17 @@ public class MemoryGame : Game
         this._boardHeight = 0.24f;
         this._selectedCards = new List<PlayingCard>();
 
+        this.Pairs = this.GetPairAmount();
+
         this.GeneratePairs(Pairs);
         this.ShuffleCards();
         this.SpawnCards();
         this.FixRotation();
+    }
+
+    private int GetPairAmount()
+    {
+        return 5;
     }
 
     private void GeneratePairs(int amount)

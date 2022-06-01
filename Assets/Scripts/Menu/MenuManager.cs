@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class MenuManager : MonoBehaviour
 {
     public SettingsManager settingsManager;
     public GameObject XRRig;
+
+    public GameObject EscapeRoom;
+    public GameObject EscapeRoomPrefab;
+    public GameObject MenuRoom;
 
     public GameObject mainMenuCanvas;
     public GameObject settingsCanvas;
@@ -16,6 +21,7 @@ public class MenuManager : MonoBehaviour
     public GameObject howToPlayControllerCanvas;
     public GameObject howToPlayBCICanvas;
     public GameObject creditsCanvas;
+    public GameObject gameCompletedCanvas;
 
     public Toggle dutchToggle;
     public Toggle englishToggle;
@@ -125,7 +131,7 @@ public class MenuManager : MonoBehaviour
             PlayerPrefs.SetInt("sitting", sittingToggle.isOn ? 1 : 0);
             PlayerPrefs.Save();
         }
-        settingsManager.SetUserHeight();
+        settingsManager.LoadSettings();
     }
 
     public void StartGame()
@@ -136,9 +142,15 @@ public class MenuManager : MonoBehaviour
     private IEnumerator LoadGameScene()
     {
         Door.Open();
+        Destroy(EscapeRoom.gameObject);
         yield return new WaitForSeconds(2.5f);
+
+        EscapeRoom = Instantiate(EscapeRoomPrefab, Vector3.zero, Quaternion.identity);
+        yield return new WaitForSeconds(0.1f);
         XRRig.transform.position = GameSpawnPoint.position;
         settingsManager.LoadSettings();
+        Door.Close();
+        MenuRoom.SetActive(false);
     }
 
     public void ShowCredits()
@@ -179,6 +191,11 @@ public class MenuManager : MonoBehaviour
         howToPlayCanvas.SetActive(false);
         creditsCanvas.SetActive(false);
         mainMenuCanvas.SetActive(true);
+    }
+
+    public void ShowGameCompleted()
+    {
+        
     }
 
     public void Quit()
