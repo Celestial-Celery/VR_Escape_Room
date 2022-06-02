@@ -32,12 +32,17 @@ public class MenuManager : MonoBehaviour
 
     public Door Door;
     public Transform GameSpawnPoint;
+    [SerializeField]
+    BCIManager bciManager;
+
 
 
     private bool canChange = false;
 
     private void Start()
     {
+        bciManager.Login();
+
         StartCoroutine(LateStart(1f));
     }
 
@@ -131,11 +136,19 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(LoadGameScene());
+        bciManager.GetDevices();
+        bciManager.GetStatus();
     }    
 
     private IEnumerator LoadGameScene()
     {
         Door.Open();
+        // if (bciControlsToggle) 
+        // {
+        //     bciManager.Login();
+        //     bciManager.GetDevices();
+        //     bciManager.GetStatus();
+        // } 
         yield return new WaitForSeconds(2.5f);
         XRRig.transform.position = GameSpawnPoint.position;
         settingsManager.LoadSettings();

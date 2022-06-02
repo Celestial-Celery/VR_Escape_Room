@@ -39,6 +39,7 @@ public class BCIManager : MonoBehaviour
     {
         _firebaseController = new FirebaseController();
         await _firebaseController.Initialize();
+        // Debug.Log("------");
 
         _notionSdk = new Notion(_firebaseController);
         await _notionSdk.Login(_device);
@@ -101,16 +102,18 @@ public class BCIManager : MonoBehaviour
     /// For instance: leftArm, rightArm, leftIndexFinger, etc
     /// </summary>
     /// <param name="kinesisLabel"></param>
-    // public void SubscribeKinesis(string kinesisLabel)
-    // {
-    //     if (!_notionSdk.IsLoggedIn) return;
+    public void SubscribeKinesis(string kinesisLabel, KinesisHandler kinesisHandler)
+    {
+       if (!_notionSdk.IsLoggedIn) return;
 
-    //     _notionSdk.Subscribe(new KinesisHandler
-    //     {
-    //         Label = kinesisLabel,
-    //         OnKinesisUpdated = (probability) => {
-    //             _textKinesisProbability.text = $"{kinesisLabel} : {probability}";
-    //         }
-    //     });
-    // }
+        _notionSdk.Subscribe(kinesisHandler);
+    //    _notionSdk.Subscribe(new KinesisHandler
+    //    {
+    //        Label = kinesisLabel,
+    //        OnKinesisUpdated = (probability) =>
+    //        {
+    //            _textKinesisProbability.text = $"{kinesisLabel} : {probability}";
+    //        }
+    //    });
+    }
 }

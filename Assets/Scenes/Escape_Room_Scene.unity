@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028536, g: 0.22571547, b: 0.30692288, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028535, g: 0.22571562, b: 0.30692312, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -804,7 +804,7 @@ PrefabInstance:
     - target: {fileID: 5895928184991092930, guid: b426e3cc46901c44bb3b8043c966c3c1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5895928184991092930, guid: b426e3cc46901c44bb3b8043c966c3c1,
         type: 3}
@@ -1194,6 +1194,50 @@ Transform:
   - {fileID: 4913996485971189008}
   m_Father: {fileID: 543450653001484694}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &678762875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678762877}
+  - component: {fileID: 678762876}
+  m_Layer: 0
+  m_Name: BCIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678762876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678762875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0670cc2ead4b9c49b13dd3518932a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _device: {fileID: 11400000, guid: 857f5fdbf6fe6c74aafba02fae9cd32d, type: 2}
+--- !u!4 &678762877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678762875}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.4885654, y: 0.9921608, z: 0.07772108}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &733599192
 GameObject:
@@ -3352,7 +3396,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650571159
 GameObject:
@@ -3740,7 +3784,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712974809
 GameObject:
@@ -3972,7 +4016,7 @@ PrefabInstance:
     - target: {fileID: 3428985760452905919, guid: 15fd202ad59ca2c4886fd05776c5f181,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3428985760452905919, guid: 15fd202ad59ca2c4886fd05776c5f181,
         type: 3}
@@ -4238,6 +4282,11 @@ PrefabInstance:
       propertyPath: XRRig
       value: 
       objectReference: {fileID: 87410154}
+    - target: {fileID: 5189475176023343506, guid: b3226732feb8a1c4ba927303c8a0e0b2,
+        type: 3}
+      propertyPath: bciManager
+      value: 
+      objectReference: {fileID: 678762876}
     - target: {fileID: 5189475176023343506, guid: b3226732feb8a1c4ba927303c8a0e0b2,
         type: 3}
       propertyPath: GameSpawnPoint
