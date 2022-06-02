@@ -16,11 +16,71 @@ public class ToggleControllerVisibility : MonoBehaviour
     private static VisibilityState _rightstate = VisibilityState.Visible;
     private XRInteractorLineVisual _leftRay;
     private XRInteractorLineVisual _rightRay;
+    private ActionBasedController _leftController;
+    private ActionBasedController _rightController;
+    private Vector3 _leftControllerPosition;
+    private Vector3 _rightControllerPosition;
+
+    void Awake()
+    {
+        _leftControllerPosition = leftHandAnchor.transform.position;
+        _rightControllerPosition = rightHandAnchor.transform.position;
+    }
 
     void Start()
     {
         _leftRay = leftHandAnchor.GetComponent<XRInteractorLineVisual>();
         _rightRay = rightHandAnchor.GetComponent<XRInteractorLineVisual>();
+
+        _leftController = leftHandAnchor.GetComponent<ActionBasedController>();
+        _rightController = rightHandAnchor.GetComponent<ActionBasedController>();
+    }
+
+    private void Update()
+    {
+        DisableInactiveControllers();
+    }
+
+
+    private void DisableInactiveControllers()
+    {
+        Vector3 leftControllerVelocity = (leftHandAnchor.transform.position - _leftControllerPosition) / Time.deltaTime;
+        _leftControllerPosition = leftHandAnchor.transform.position;
+
+        Vector3 rightControllerVelocity = (rightHandAnchor.transform.position - _rightControllerPosition) / Time.deltaTime;
+        _rightControllerPosition = rightHandAnchor.transform.position;
+
+        Debug.Log(rightControllerVelocity.magnitude);
+
+        if (!HandManager.handsActive)
+        {
+            if (leftControllerVelocity.magnitude >= 0.001f)
+            {
+                leftOVRControllerPrefab.SetActive(true);
+                _leftRay.enabled = true;
+            }
+            else
+            {
+                leftOVRControllerPrefab.SetActive(false);
+                _leftRay.enabled = false;
+            }
+
+            if (rightControllerVelocity.magnitude >= 0.001f)
+            {
+                rightOVRControllerPrefab.SetActive(true);
+                _rightRay.enabled = true;
+            }
+            else
+            {
+                rightOVRControllerPrefab.SetActive(false);
+                _rightRay.enabled = false;
+            }
+        }
+        else
+        {
+            _leftRay.enabled = true;
+            _rightRay.enabled = true;
+        }
     }
 
     public void toggleLeft()
