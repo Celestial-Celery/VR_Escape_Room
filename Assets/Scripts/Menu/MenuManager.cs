@@ -39,6 +39,7 @@ public class MenuManager : MonoBehaviour
     public Door Door;
     public Transform GameSpawnPoint;
 
+    public bool GameActive = false;
 
     private bool canChange = false;
 
@@ -136,11 +137,15 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(LoadGameScene());
+        if (!this.GameActive)
+        {
+            StartCoroutine(LoadGameScene());
+        }
     }    
 
     private IEnumerator LoadGameScene()
     {
+        this.GameActive = true;
         Door.Open();
         Destroy(EscapeRoom.gameObject);
         yield return new WaitForSeconds(2.5f);

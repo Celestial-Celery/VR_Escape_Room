@@ -11,13 +11,10 @@ public class TeleportToMenu : MonoBehaviour
 
     public void Teleport()
     {
+        menuManager.GameActive = false;
         menuManager.MenuRoom.SetActive(true);
         menuManager.ShowGameCompleted();
         XRRig.transform.position = menuSpawnPoint.position;
-        //if (GameObject.Find("Game_Manager").GetComponent<GameManager>().EscapeRoomState == GameManagerState.Ended)
-        //{
-            
-        //}
         menuManager.EscapeRoom.SetActive(false);
     }
 }

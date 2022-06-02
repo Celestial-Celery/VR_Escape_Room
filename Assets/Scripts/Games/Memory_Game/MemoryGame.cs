@@ -31,8 +31,8 @@ public class MemoryGame : Game
     {
         this.GameState = GameState.InProgress;
 
-        this._boardLength = 0.7f;
-        this._boardHeight = 0.24f;
+        this._boardLength = 0.7f * transform.localScale.x;
+        this._boardHeight = 0.24f * transform.localScale.x;
         this._selectedCards = new List<PlayingCard>();
 
         this.Pairs = this.GetPairAmount();
@@ -96,13 +96,14 @@ public class MemoryGame : Game
 
         this._nextPosition.z = this.gameObject.transform.position.z + (this._boardHeight / 2);
         this._nextPosition.x = this.gameObject.transform.position.x - (this._boardLength / 2);
-        this._nextPosition.y = this.gameObject.transform.position.y + 0.56f;
+        this._nextPosition.y = this.gameObject.transform.position.y + (0.56f * this.transform.localScale.x);
 
         for (int rowNr = 0; rowNr < rowCount; rowNr++)
         {
             for (int rowIndex = 0; rowIndex < rowLength; rowIndex++)
             {
                 PlayingCard clone = Instantiate(_cardsInGame[nextIndex], this._nextPosition, transform.rotation);
+                clone.transform.localScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
                 clone.transform.parent = this.gameObject.transform;
 
                 _cardsInGame[nextIndex] = clone;
@@ -259,7 +260,7 @@ public class MemoryGame : Game
 
     private void SpawnKey()
     {
-        Key key = Instantiate(Key, this.transform.position + new Vector3(0, 0.55f, 0), this.transform.rotation);
+        Key key = Instantiate(Key, this.transform.position + new Vector3(0, 0.55f * this.transform.localScale.x, 0), this.transform.rotation, this.gameObject.transform);
         key.Door = this.Door;
     }
     #endregion
